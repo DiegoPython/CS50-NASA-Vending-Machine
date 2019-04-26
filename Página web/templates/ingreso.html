@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <h1 class="mb-3">Log in</h1>
+
+    <form action="/form" method="post">
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="name" placeholder="Correo">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control" name="password" placeholder="Password">
+        </div>
+        <br>
+
+        <button class="btn btn-primary" type="submit">Log in</button>
+
+    </form>
+
+    <h1 class="mb-3">Sign up</h1>
+
+    <form action="/form" method="post">
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control" name="email" placeholder="Correo">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control" name="password" placeholder="Password">
+        </div>
+        <br>
+        <div class="form-group">
+            <div class="form-check">
+                <input type="radio" name="genero" value="hombre">
+                <label for="Hombre">Hombre</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="genero" value="mujer">
+                <label for="Mujer">Mujer</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="genero" value="otro">
+                <label for="Otro">Otro</label>
+            </div>
+        </div>
+        <br>
+
+        <button class="btn btn-primary" type="submit">Sign up</button>
+
+    </form>
+    
+    <!--
+    <script>
+
+        var _0x48ff=['querySelector','form','onsubmit','value','focus','select[name=division]','You\x20must\x20specify\x20your\x20divison.','input[name=hq]:checked','You\x20must\x20specify\x20your\x20Headquarter.'];(function(_0x48a344,_0x1368ce){var _0x5c6c50=function(_0xa7ce10){while(--_0xa7ce10){_0x48a344['push'](_0x48a344['shift']());}};_0x5c6c50(++_0x1368ce);}(_0x48ff,0x1ef));var _0x1e94=function(_0x2469a7,_0x19f112){_0x2469a7=_0x2469a7-0x0;var _0x262c0c=_0x48ff[_0x2469a7];return _0x262c0c;};document[_0x1e94('0x0')](_0x1e94('0x1'))[_0x1e94('0x2')]=function(){let _0x3ff4b2=document[_0x1e94('0x0')]('input[name=name]');if(!_0x3ff4b2[_0x1e94('0x3')]){alert('You\x20must\x20specify\x20your\x20name.');_0x3ff4b2[_0x1e94('0x4')]();return![];}let _0x122809=document[_0x1e94('0x0')](_0x1e94('0x5'));if(!_0x122809['value']){alert(_0x1e94('0x6'));_0x122809[_0x1e94('0x4')]();return![];}let _0x568d99=document[_0x1e94('0x0')](_0x1e94('0x7'));if(!_0x568d99||!_0x568d99[_0x1e94('0x3')]){alert(_0x1e94('0x8'));return![];}return!![];};
+
+    </script>
+    -->
+    
+{% endblock %}
