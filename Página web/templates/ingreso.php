@@ -32,7 +32,7 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/ingreso.html">Ingreso</a>
+                        <a class="nav-link" href="/ingreso.php">Ingreso</a>
                     </li>
                 </ul>
 
@@ -63,7 +63,7 @@
                     <input type="password" class="form-control" name="password" maxlength="20" placeholder="Password">
                 </div>
 
-                <button class="btn btn-primary" type="submit">Log in</button>
+                <button class="btn btn-primary" type="submit" value="submit">Log in</button>
             
             </form>
         
@@ -75,7 +75,7 @@
         
             <h1 class="mb-3">Sign up</h1>
         
-            <form name="signup" action="/" method="post" onsubmit="return(validatesu());">
+            <form name="signup" action="/" method="signup.php" onsubmit="return(validatesu());">
         
                 <div class="form-group">
                     <input type="text" class="form-control" name="nombre" placeholder="Nombre">
@@ -108,8 +108,8 @@
         
                 </div>
         
-                <button class="btn btn-primary" type="submit">Sign up</button>
-        
+                <button class="btn btn-primary" type="submit" name="submit">Sign up</button>
+
             </form>
         
         </div>
@@ -150,7 +150,7 @@
 
             }
 
-            alert("Registro exitoso!");
+            //alert("Registro exitoso!");
             return true;
 
         }
@@ -204,7 +204,7 @@
 
             }
 
-            alert("Registro exitoso!");
+            //alert("Registro exitoso!");
             return true;
 
         }

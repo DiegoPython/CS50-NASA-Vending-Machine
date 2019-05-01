@@ -32,7 +32,7 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/ingreso.html">Ingreso</a>
+                        <a class="nav-link" href="/ingreso.php">Ingreso</a>
                     </li>
                 </ul>
 
@@ -78,9 +78,12 @@
 							echo
 							"<img src=\"".$row["imagen"]."\">
 							<div class=\"inner\">
-			                    <h4>".$row["nombre"]."</h3>
+			                    <h4>".$row["nombre"]."</h4>
 			                    <h5>Precio: ".$row["precio"]."</h5>
 			                    <h6>Stock: ".$row["stock"]."</h6>
+			                    <form class=\"form-inline my-2 my-lg-0\">
+				                    <button class=\"btn btn-dark\" type=\"submit\">Comprar</button>
+				                </form>
 			                </div>";
 
 						}
