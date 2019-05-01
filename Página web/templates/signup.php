@@ -65,7 +65,7 @@
                                 
                 }
                                 
-                //echo 'Conectado satisfactoriamente';
+                echo 'Conectado satisfactoriamente';
 
                 if(isset($_POST['submit']))
                 {
@@ -74,6 +74,7 @@
                     $email = $_POST["email"];
                     $password = $_POST["password"];
 
+                    //echo '<script>alert("Hola '. $nombre . ' ' . $email . ' ' . $password .'");</script>';
 
                     $sql = "INSERT INTO usuarios (nombre, email, password, credito, rol) VALUES ('".$nombre."', '".$email."', '".$password ."', 0, 'USUARIO')";
 
