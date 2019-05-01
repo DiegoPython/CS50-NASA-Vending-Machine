@@ -75,7 +75,7 @@
         
             <h1 class="mb-3">Sign up</h1>
         
-            <form name="signup" action="/" method="signup.php" onsubmit="return(validatesu());">
+            <form name="signup" action="signup.php" method="post" onsubmit="return(validatesu());">
         
                 <div class="form-group">
                     <input type="text" class="form-control" name="nombre" placeholder="Nombre">
@@ -108,7 +108,7 @@
         
                 </div>
         
-                <button class="btn btn-primary" type="submit" name="submit">Sign up</button>
+                <input class="btn btn-primary" type="submit" name="submit" value="Sign up">
 
             </form>
         
