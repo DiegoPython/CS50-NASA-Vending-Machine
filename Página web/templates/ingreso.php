@@ -120,95 +120,93 @@
         
         function validateli()
         {
-
+            
             if(document.login.email.value == "")
             {
-
+            
                 alert("Por favor escriba su e-mail");
                 document.login.email.focus();
                 return false;
-
+            
             }
-
+            
             else
             {
-
+            
                 correo = document.login.email.value;
                 validate = validateEmail(correo);
-
+            
                 if(validate == false)
                     return validate;
-
+            
             }
-
+            
             if(document.login.password.value == "")
             {
-
+            
                 alert("Por favor escriba su contrasena");
                 document.login.password.focus();
                 return false;
-
+            
             }
-
             //alert("Registro exitoso!");
             return true;
-
+        
         }
-
+        
         function validatesu()
         {
-
+        
             if(document.signup.nombre.value == "")
             {
-
+        
                 alert("Por favor escriba su nombre");
                 document.signup.nombre.focus();
                 return false;
-
+        
             }
-
+        
             if(document.signup.email.value == "")
             {
-
+        
                 alert("Por favor escriba su e-mail");
                 document.signup.email.focus();
                 return false;
-
+        
             }
-
+        
             else
             {
-
+        
                 correo = document.signup.email.value;
                 validate = validateEmail(correo);
-
+        
                 if(validate == false)
                     return validate;
-
+        
             }
-
+        
             if(document.signup.password.value == "")
             {
-
+        
                 alert("Por favor escriba una contrasena");
                 document.signup.password.focus();
                 return false;
-
             }
-
+        
             if(document.signup.genero.value == "")
             {
-
+        
                 alert("Por favor escoja un genero");
                 return false;
-
+        
             }
-
+        
             //alert("Registro exitoso!");
             return true;
-
+        
         }
-
+        
         function validateEmail(correo)
         {
         
@@ -224,11 +222,10 @@
                 return false;
             
             }
-
             return true;
         
         }
-
+        
     </script>
 
 </html>
