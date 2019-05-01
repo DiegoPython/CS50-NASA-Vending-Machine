@@ -49,14 +49,13 @@
 
     <body>
 
-        <?php if(isset($_POST['submit'])): ?>
+        <?php if(isset($_POST['form_submitted'])): ?>
 
-            <h3>Registro exitoso, bienvenido <?php echo $_POST['nombre']; ?></h3>
-            <br>
+            <h2>Gracias <?php echo $_POST['nombre']; ?></h2>
 
-            <?php
+            <!--<?php
 
-                $mysqli = new mysqli('localhost', 'id9431753_admin', 'nasa254', 'id9431753_nasa');
+                /*$mysqli = new mysqli('localhost', 'id9431753_admin', 'nasa254', 'id9431753_nasa');
                                 
                 if(!$mysqli)
                 {
@@ -67,30 +66,27 @@
                                 
                 //echo 'Conectado satisfactoriamente';
 
-                if(isset($_POST['submit']))
-                {
+                //if(isset($_POST['submit']))
+                //{
 
                     $nombre = $_POST["nombre"];
                     $email = $_POST["email"];
                     $password = $_POST["password"];
 
+                    echo '<script>alert("Hola '. $nombre . ' ' . $email . ' ' . $password .'");</script>';
 
-                    $sql = "INSERT INTO usuarios (nombre, email, password, credito, rol) VALUES ('".$nombre."', '".$email."', '".$password ."', 0, 'USUARIO')";
+                    /*$sql = "INSERT INTO usuarios(nombre, email, password, credito, rol) VALUES (".$nombre.", ".$email.", ".$password .", 0, \"USUARIO\")";
 
                     if($mysqli-> query($sql))
                     {
 
                         echo '<script>alert("Registro existoso");</script>';
 
-                    }
+                    }*/
 
-                }
+                //}*/
 
-            ?>
-
-        <?php endif; ?>
-
-        <a href="/">Regresar a inicio</a>
+            ?>-->
 
     </body>
 
