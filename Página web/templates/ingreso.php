@@ -32,7 +32,7 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/ingreso.html">Ingreso</a>
+                        <a class="nav-link" href="/ingreso.php">Ingreso</a>
                     </li>
                 </ul>
 
@@ -63,7 +63,7 @@
                     <input type="password" class="form-control" name="password" maxlength="20" placeholder="Password">
                 </div>
 
-                <button class="btn btn-primary" type="submit">Log in</button>
+                <button class="btn btn-primary" type="submit" value="submit">Log in</button>
             
             </form>
         
@@ -75,7 +75,7 @@
         
             <h1 class="mb-3">Sign up</h1>
         
-            <form name="signup" action="/" method="post" onsubmit="return(validatesu());">
+            <form name="signup" action="signup.php" method="post" onsubmit="return(validatesu());">
         
                 <div class="form-group">
                     <input type="text" class="form-control" name="nombre" placeholder="Nombre">
@@ -108,8 +108,8 @@
         
                 </div>
         
-                <button class="btn btn-primary" type="submit">Sign up</button>
-        
+                <button class="btn btn-primary" type="submit" name="submit">Sign up</button>
+
             </form>
         
         </div>
@@ -120,95 +120,93 @@
         
         function validateli()
         {
-
+            
             if(document.login.email.value == "")
             {
-
+            
                 alert("Por favor escriba su e-mail");
                 document.login.email.focus();
                 return false;
-
+            
             }
-
+            
             else
             {
-
+            
                 correo = document.login.email.value;
                 validate = validateEmail(correo);
-
+            
                 if(validate == false)
                     return validate;
-
+            
             }
-
+            
             if(document.login.password.value == "")
             {
-
+            
                 alert("Por favor escriba su contrasena");
                 document.login.password.focus();
                 return false;
-
+            
             }
-
-            alert("Registro exitoso!");
+            //alert("Registro exitoso!");
             return true;
-
+        
         }
-
+        
         function validatesu()
         {
-
+        
             if(document.signup.nombre.value == "")
             {
-
+        
                 alert("Por favor escriba su nombre");
                 document.signup.nombre.focus();
                 return false;
-
+        
             }
-
+        
             if(document.signup.email.value == "")
             {
-
+        
                 alert("Por favor escriba su e-mail");
                 document.signup.email.focus();
                 return false;
-
+        
             }
-
+        
             else
             {
-
+        
                 correo = document.signup.email.value;
                 validate = validateEmail(correo);
-
+        
                 if(validate == false)
                     return validate;
-
+        
             }
-
+        
             if(document.signup.password.value == "")
             {
-
+        
                 alert("Por favor escriba una contrasena");
                 document.signup.password.focus();
                 return false;
-
             }
-
+        
             if(document.signup.genero.value == "")
             {
-
+        
                 alert("Por favor escoja un genero");
                 return false;
-
+        
             }
-
-            alert("Registro exitoso!");
+        
+            //alert("Registro exitoso!");
             return true;
-
+        
         }
-
+        
         function validateEmail(correo)
         {
         
@@ -224,11 +222,10 @@
                 return false;
             
             }
-
             return true;
         
         }
-
+        
     </script>
 
 </html>
