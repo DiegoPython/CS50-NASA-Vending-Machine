@@ -3,14 +3,17 @@ import requests
 
 source = requests.get('https://nasavendingmachine.000webhostapp.com/').text
 
+stock = []
+
 soup = BeautifulSoup(source, 'lxml')
+for products in soup.find_all('div', class_='inner'):
+    global stock
+    stocks = products.find('h6').text
+    el = stocks.split(" ")
+    stock.append(el[0])
+    stock.append(int(el[1]))
 
-stock = soup.find('div', class_='inner').h6.text
 
-gaeta = stock.split(" ")
 
-print(gaeta[1])
+print(stock[1])
 
-x = int(gaeta[1]) * 1000
-
-print(x)
