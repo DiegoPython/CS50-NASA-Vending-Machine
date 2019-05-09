@@ -1,50 +1,28 @@
+<?php
+
+    include("login.php");
+
+    if(isset($_SESSION['login_user']))
+    {
+
+        header("Location: usuario.php");
+
+    }
+
+?>
+
 <!DOCTYPE html>
 
 <html>
 
     <head>
-
-        <meta name="viewport" content="initial-scale=1, width=device-width">
-
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         
-        <link href="/static/styles.css" rel="stylesheet">
-        
-        <title>NASA Vending Machine</title>
+        <?php
 
-        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-            <a class="navbar-brand mb-1 h1" href="/">NASA Vending Machine</a>
+            include("template.php");
 
-            <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" type="button" data-target="#navbarNav" data-toggle="collapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        ?>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/usuario.html">Usuario</a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/ingreso.php">Ingreso</a>
-                    </li>
-                </ul>
-
-                <form class="form-inline my-2 my-lg-0" action="search.php" method="post">
-                    <input class="form-control mr-sm-2" name="busqueda" type="search" placeholder="Busca productos" aria-label="Search">
-                    <button class="btn btn-dark" name="search" type="submit">Buscar</button>
-                </form>
-
-            </div>
-
-        </nav>
-        
     </head>
 
     <body>
@@ -53,17 +31,19 @@
 
             <h1 class="mb-3">Log in</h1>
         
-            <form name="login" action="/" method="post" onsubmit="return(validateli());">
+            <form name="login" action="" method="post" onsubmit="return(validateli());">
         
                 <div class="form-group">
-                  <input type="text" class="form-control" name="email" placeholder="Correo">
+                  <input type="text" class="form-control" name="email" placeholder="Correo" style="width: 250px;">
                 </div>
         
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" maxlength="20" placeholder="Password">
+                    <input type="password" class="form-control" name="password" maxlength="20" placeholder="Contrasena" style="width: 250px;">
                 </div>
 
-                <button class="btn btn-primary" type="submit" value="submit">Log in</button>
+                <button class="btn btn-primary" name="login" type="submit">Log in</button>
+
+                <span><?php echo $error; ?></span>
             
             </form>
         
@@ -71,48 +51,7 @@
 
         <br>
 
-        <div>
-        
-            <h1 class="mb-3">Sign up</h1>
-        
-            <form name="signup" action="signup.php" method="post" onsubmit="return(validatesu());">
-        
-                <div class="form-group">
-                    <input type="text" class="form-control" name="nombre" placeholder="Nombre">
-                </div>
-        
-                <div class="form-group">
-                    <input type="text" class="form-control" name="email" placeholder="Correo">
-                </div>
-        
-                <div class="form-group">
-                    <input type="password" class="form-control" name="password" maxlength="20" placeholder="Password">
-                </div>
-        
-                <div class="form-group">
-        
-                    <div class="form-check">
-                        <input type="radio" name="genero" value="hombre">
-                        <label for="Hombre">Hombre</label>
-                    </div>
-        
-                    <div class="form-check">
-                        <input type="radio" name="genero" value="mujer">
-                        <label for="Mujer">Mujer</label>
-                    </div>
-        
-                    <div class="form-check">
-                        <input type="radio" name="genero" value="otro">
-                        <label for="Otro">Otro</label>
-                    </div>
-        
-                </div>
-        
-                <button class="btn btn-primary" type="submit" name="submit">Sign up</button>
-
-            </form>
-        
-        </div>
+        <a href="/registro.php">No tienes cuenta? Registrate</a>
 
     </body>
 
@@ -149,59 +88,6 @@
                 return false;
             
             }
-            //alert("Registro exitoso!");
-            return true;
-        
-        }
-        
-        function validatesu()
-        {
-        
-            if(document.signup.nombre.value == "")
-            {
-        
-                alert("Por favor escriba su nombre");
-                document.signup.nombre.focus();
-                return false;
-        
-            }
-        
-            if(document.signup.email.value == "")
-            {
-        
-                alert("Por favor escriba su e-mail");
-                document.signup.email.focus();
-                return false;
-        
-            }
-        
-            else
-            {
-        
-                correo = document.signup.email.value;
-                validate = validateEmail(correo);
-        
-                if(validate == false)
-                    return validate;
-        
-            }
-        
-            if(document.signup.password.value == "")
-            {
-        
-                alert("Por favor escriba una contrasena");
-                document.signup.password.focus();
-                return false;
-            }
-        
-            if(document.signup.genero.value == "")
-            {
-        
-                alert("Por favor escoja un genero");
-                return false;
-        
-            }
-        
             //alert("Registro exitoso!");
             return true;
         
