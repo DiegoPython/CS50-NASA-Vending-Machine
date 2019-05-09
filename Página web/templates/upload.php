@@ -1,9 +1,3 @@
-<?php
-
-	include("subir.php");
-
-?>
-
 <!DOCTYPE html>
 
 <html>
@@ -24,7 +18,7 @@
         
             <h1 class="mb-3">Agregar nuevo producto</h1>
         
-            <form name="upload" action="" method="post" onsubmit="return(validate());">
+            <form name="upload" action="subir.php" method="post" onsubmit="return(validate());">
         
                 <div class="form-group">
                     <input type="text" class="form-control" name="nombre" placeholder="Nombre" style="width: 250px;">
@@ -41,8 +35,13 @@
                 <div class="form-group">
                     <input type="number" class="form-control" name="stock" placeholder="Stock" style="width: 250px;">
                 </div>
+
+                <div class="form-group">
+                	<label id="imagen">Escribir aqui la URL de la imagen que desee exponer de su producto (asegurese de que la URL e imagen sea la correcta)</label>
+                	<input type="text" class="form-control" name="imagen" placeholder="URL de imagen" style="width: 400px;">
+                </div>
         
-                <button class="btn btn-primary" type="submit" name="upload">Subir producto</button>
+                <button class="btn btn-primary" type="submit" name="submit">Subir producto</button>
 
             </form>
         
@@ -86,6 +85,15 @@
             {
         
                 alert("Por favor defina un stock para el producto");
+                document.upload.stock.focus();
+                return false;
+        
+            }
+
+            if(document.upload.imagen.value == "")
+            {
+        
+                alert("Por favor agrege una URL para la imagen de su producto");
                 document.upload.stock.focus();
                 return false;
         
