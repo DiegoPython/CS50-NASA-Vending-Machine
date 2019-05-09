@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 
+    <!DOCTYPE html>
+<!-- <button class=\"btn btn-dark\" type=\"submit\" >Comprar</button>-->
 <html>
 
 	<head>
@@ -11,6 +12,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         
+        <script src="qrcode.js"></script>
+
         <link href="/static/styles.css" rel="stylesheet">
         
         <title>NASA Vending Machine</title>
@@ -52,7 +55,7 @@
         <div class="thumbnails">
 
             <div class="box">
-                <br>
+                
                 <?php
 
                 	$mysqli = new mysqli('localhost', 'id9431753_admin', 'nasa254', 'id9431753_nasa');
@@ -68,21 +71,23 @@
 
 					$sql = "SELECT nombre, imagen, precio, stock from productos";
 					$result = $mysqli-> query($sql);
-
 					if($result -> num_rows > 0)
 					{
-
 						while($row = $result-> fetch_assoc())
 						{
-
+                            if(isset($_POST[submitted])){
+                                $product = $_POST["nombre"];
+                                $stock = $POST["stock"];
+                            }
 							echo
 							"<img src=\"".$row["imagen"]."\">
 							<div class=\"inner\">
-			                    <h4>".$row["nombre"]."</h4>
-			                    <h5>Precio: ".$row["precio"]."</h5>
-			                    <h6>Stock: ".$row["stock"]."</h6>
-			                    <form class=\"form-inline my-2 my-lg-0\">
-				                    <button class=\"btn btn-dark\" type=\"submit\">Comprar</button>
+                                <form class='form-inline my-2 my-lg-0' target = '_blank' action = 'qr.php' method='post'>    
+                                    <h4 name=\"nombre\">".$row["nombre"]."</h4>
+			                        <h5 name=\"precio\">Precio: ".$row["precio"]."</h5>
+                                    <h6 name=\"stock\">Stock: ".$row["stock"]."</h6> 
+                                    <input type = \"hidden\" name = \"submitted\" value = \"true\">                           
+                                    <button class=\"btn btn-dark\" type=\"submit\" name=\"sumbit\">Comprar</button>
 				                </form>
 			                </div>";
 
@@ -91,13 +96,10 @@
 					}
 
 					else
-						echo "0 result";
+                        echo "0 result";
 
-				?>
+                ?>
             </div>
-
         </div>
-
     </body>
-
 </html>

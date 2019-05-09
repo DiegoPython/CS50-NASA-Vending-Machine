@@ -6,6 +6,7 @@ source = requests.get('https://nasavendingmachine.000webhostapp.com/').text
 stock = []
 
 soup = BeautifulSoup(source, 'lxml')
+
 for products in soup.find_all('div', class_='inner'):
     global stock
     stocks = products.find('h6').text
@@ -14,6 +15,6 @@ for products in soup.find_all('div', class_='inner'):
     stock.append(int(el[1]))
 
 
+#tiempo = soup.find('docs-page' class_='page-native-overview hydrated').main.article.text
 
 print(stock[1])
-

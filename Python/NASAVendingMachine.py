@@ -20,7 +20,7 @@ cap.set(4,480)
 #1280.0 x 1024.0
 data = "x"
 rep_flag = True
-#arduino = serial.Serial("COM6", 9600)
+arduino = serial.Serial("COM6", 9600)
 time.sleep(2)
 
 while True:
@@ -38,19 +38,19 @@ while True:
         if(str(data) == "b'Hello :)'"):
             data = "x"
             print("Espere...")
-            #arduino.write(b'9')
+            arduino.write(b'9')
             print("Exito :)")
             rep_flag = False
             time.sleep(7)
         else:
             data = "x"
             print("Espere...")
-            #arduino.write(b'8')
+            arduino.write(b'8')
             print("CÓDIGO INVALIDO")
             rep_flag = False
             time.sleep(7)
     else:
-        #arduino.write(b'7')
+        arduino.write(b'7')
         rep_flag = True
         print("MUESTRE CÓDIGO")        
             
@@ -60,5 +60,4 @@ while True:
     key = cv2.waitKey(1)
     if key == 27:
         break
-#
-# arduino.close()
+arduino.close()
