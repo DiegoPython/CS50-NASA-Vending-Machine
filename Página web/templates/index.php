@@ -1,5 +1,6 @@
 
-    <!DOCTYPE html>
+
+<!DOCTYPE html>
 <!-- <button class=\"btn btn-dark\" type=\"submit\" >Comprar</button>-->
 <html>
 
