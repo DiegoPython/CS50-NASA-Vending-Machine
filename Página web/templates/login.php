@@ -3,7 +3,7 @@
     session_start();
     $error = "";
 
-    if(isset($_POST['login']))
+    if(isset($_POST['login']) || isset($_POST['signup']))
     {
 
         $email = $_POST["email"];
